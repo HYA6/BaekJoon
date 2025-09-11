@@ -22,9 +22,34 @@
 */
 
 #include<iostream>
+#include<vector>
 using namespace std;
 
 int main() {
     int n, m; // n * m 크기의 행렬 행과 열
     cin >> n >> m;
+
+    // 2차원 배열 동적할당
+    vector<vector<int>> A(n, vector<int>(m));
+    vector<vector<int>> B(n, vector<int>(m));
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> A[i][j];
+        }
+    }
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> B[i][j];
+        }
+    }
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (j != 0) cout << " ";
+            cout << A[i][j] + B[i][j];
+        }
+        cout << "\n";
+    }
 }
