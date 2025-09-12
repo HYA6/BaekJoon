@@ -25,6 +25,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BaekJoon08_02_11005", "Baek
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BaekJoon08_03_2720", "BaekJoon08_03_2720\BaekJoon08_03_2720.vcxproj", "{FD61C4B2-CEA4-4CAD-86EF-513AC5D7BA3F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BaekJoon08_04_2903", "BaekJoon08_04_2903\BaekJoon08_04_2903.vcxproj", "{FCE39CAB-E9F8-4F05-A8E8-783C6A85DD39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -121,6 +123,14 @@ Global
 		{FD61C4B2-CEA4-4CAD-86EF-513AC5D7BA3F}.Release|x64.Build.0 = Release|x64
 		{FD61C4B2-CEA4-4CAD-86EF-513AC5D7BA3F}.Release|x86.ActiveCfg = Release|Win32
 		{FD61C4B2-CEA4-4CAD-86EF-513AC5D7BA3F}.Release|x86.Build.0 = Release|Win32
+		{FCE39CAB-E9F8-4F05-A8E8-783C6A85DD39}.Debug|x64.ActiveCfg = Debug|x64
+		{FCE39CAB-E9F8-4F05-A8E8-783C6A85DD39}.Debug|x64.Build.0 = Debug|x64
+		{FCE39CAB-E9F8-4F05-A8E8-783C6A85DD39}.Debug|x86.ActiveCfg = Debug|Win32
+		{FCE39CAB-E9F8-4F05-A8E8-783C6A85DD39}.Debug|x86.Build.0 = Debug|Win32
+		{FCE39CAB-E9F8-4F05-A8E8-783C6A85DD39}.Release|x64.ActiveCfg = Release|x64
+		{FCE39CAB-E9F8-4F05-A8E8-783C6A85DD39}.Release|x64.Build.0 = Release|x64
+		{FCE39CAB-E9F8-4F05-A8E8-783C6A85DD39}.Release|x86.ActiveCfg = Release|Win32
+		{FCE39CAB-E9F8-4F05-A8E8-783C6A85DD39}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
