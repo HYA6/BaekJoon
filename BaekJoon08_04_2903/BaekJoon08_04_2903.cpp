@@ -43,3 +43,18 @@
     -----------------------------------
 */
 
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+    int n, answer; // 횟수, 정답
+    cin >> n;
+    // 정사각형이므로 한 변의 점의 개수의 제곱을 구하면 됨
+    int spot = 2; // 맨 처음 한 변의 점의 수
+    for (int i = 0; i < n; i++) {
+        spot = 2 * spot - 1;
+        answer = pow(spot, 2);
+    }
+    cout << answer;
+}
