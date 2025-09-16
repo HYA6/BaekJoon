@@ -23,11 +23,16 @@
 using namespace std;
 
 int main() {
-    int n, num = 1, lastNum = 1; // num: 횟수, lastNum: 호가 같은 원의 마지막 숫자
+    int n, syscle = 1, lastNum = 1; // syscle: 몇 번째 호인지, lastNum: 호가 같은 원의 마지막 숫자
     cin >> n;
     // 호가 같은 원에 있으면 최소 개수가 똑같음
     // 호가 같은 원의 마지막 숫자는 1, 7, 19, 37, 61, ... 씩 6의 배수만큼 더해짐
     while (true) {
-        
+        // 입력받은 숫자(n)이 lastNum보다 작으면 루프 탈출
+        if (n <= lastNum) break;
+        // lastNum에 6의 배수만큼 더하기
+        lastNum += syscle * 6;
+        syscle++;
     }
+    cout << syscle;
 }
