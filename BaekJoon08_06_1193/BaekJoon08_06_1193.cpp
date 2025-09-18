@@ -43,12 +43,26 @@ using namespace std;
 
 int main() {
     // num: x와 비교할 값, line: 몇번째 줄인지 & 분자와 분모의 합 - 1, step: 증가 값, deno: 분자, mole: 분모
-    int x, num = 1, line = 1, step = 1, deno = 1, mole = 1;
+    int x, num = 0, line = 1, step = 1, deno = 1, mole = 1;
     cin >> x;
 
-    // 짝수줄이면 분자 증가, 분모 감소 / 홀수줄이면 분자 감소, 분모 증가
-    // 줄은 1 / 2, 3 / 4, 5, 6 / 7, 8, 9, 10 / 11, ... 씩 증가
+    // 수(num)는 1, 3, 6, 10, ... 씩 증가
     while (x > num) {
         num += step++;
+        line++;
     }
+
+    int ran = num - x;
+
+    // 짝수줄이면 분자 증가, 분모 감소
+    if (line % 2 == 0) {
+        mole = line - 1 - ran;
+        deno += ran;
+    }
+    // 홀수줄이면 분자 감소, 분모 증가
+    else {
+        deno = line - 1 - ran;
+        mole += ran;
+    }
+    cout << deno << "/" << mole;
 }
