@@ -25,3 +25,13 @@
     <Ãâ·Â3>
     999999901
 */
+
+#include<iostream>
+using namespace std;
+
+int main() {
+    int a, b, v, date;
+    cin >> a >> b >> v;
+    date = ((v - a)+(a - b - 1)) / (a - b) + 1;
+    cout << date;
+}
