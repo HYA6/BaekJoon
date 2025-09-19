@@ -33,30 +33,30 @@
 #include <iostream>
 #include <vector>
 #include <sstream>
-
 using namespace std;
 
 vector<string> split(string str, char delimiter);
 
 int main() {
-    int t;
+    int t, answer;
     cin >> t;
     string ques;
-    cin >> ques;
-    vector<string> result = split(ques, 'X');
-    for (int i = 0; i < result.size(); i++) {
-        cout << result[i] << " ";
+    for (int i = 0; i < t; i++) {
+        answer = 0;
+        cin >> ques;
+        vector<string> str = split(ques, 'X');
+        for (int i = 0; i < str.size(); i++) {
+            for (int i = 1; i <= str[i].length(); i++) answer += i;
+        }
+        cout << answer << "\n";
     }
+
 }
 
 vector<string> split(string input, char delimiter) {
     vector<string> answer;
     stringstream ss(input);
     string temp;
-
-    while (getline(ss, temp, delimiter)) {
-        answer.push_back(temp);
-    }
-
+    while (getline(ss, temp, delimiter)) answer.push_back(temp);
     return answer;
 }
