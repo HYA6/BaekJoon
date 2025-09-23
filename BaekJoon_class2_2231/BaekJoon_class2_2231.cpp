@@ -18,3 +18,28 @@
     <출력1>
     198
 */
+
+#include<iostream>
+using namespace std;
+
+int main() {
+    int n, answer = 0;
+    cin >> n;
+
+    // 이 문제는 브루트 포스(Brute Force) 문제: 모든 경우를 다 따지며 해를 찾는 방식
+    // 1부터 시작하여 최솟값 찾기
+    for (int i = 1; i < n; i++) {
+        int sum = i, temp = i;
+        while (1) {
+            sum += temp % 10; // 일의 자리 수를 합한다.
+            temp /= 10; // 복사된 입력받은 수를 10 단위로 나누기
+            if (temp == 0) break;
+        }
+        if (sum == n) {
+            answer = i;
+            break;
+        }
+    }
+
+    cout << answer;
+}
