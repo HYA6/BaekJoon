@@ -40,6 +40,5 @@ int main() {
             break;
         }
     }
-
     cout << answer;
 }
