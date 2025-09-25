@@ -39,21 +39,19 @@
 #include<iostream>
 using namespace std;
 
+// 브루트포스 알고리즘
 int main() {
-    int n, m, max = 0, sum = 0, count = 0;
+    int n, m, sum = 0, first, second, third;
     cin >> n >> m;
     int num[100] = { 0, };
     for (int i = 0; i < n; i++) cin >> num[i];
-
-    while (1) {
-        for (int i = 1; i < n; i++) {
-            if (num[i - 1] < num[i]) max = num[i];
-            else max = num[i - 1];
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            for (int k = j + 1; k < n; k++) {
+                int test = num[i] + num[j] + num[k];
+                if (test <= m && sum <= test) sum = test;
+            }
         }
-        if (sum + max < m) {
-            sum += max;
-            count++;
-        }
-        if (count == 3) break;
     }
+    cout << sum;
 }
