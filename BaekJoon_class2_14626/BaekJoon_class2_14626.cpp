@@ -1,8 +1,8 @@
 /*
 <백준 14626번 - ISBN>
 문제
-    ISBN(International Standard Book Number)은 전 세계 모든 도서에 부여된 고유번호로, 
-    국제 표준 도서번호이다. ISBN에는 국가명, 발행자 등의 정보가 담겨 있으며 13자리의 숫자로 표시된다. 
+    ISBN(International Standard Book Number)은 전 세계 모든 도서에 부여된 고유번호로, 국제 표준 도서번호이다.
+    ISBN에는 국가명, 발행자 등의 정보가 담겨 있으며 13자리의 숫자로 표시된다. 
     그중 마지막 숫자는 체크기호로 ISBN의 정확성 여부를 점검할 수 있는 숫자이다.
     이 체크기호는 일련번호의 앞에서부터 각 자리마다 가중치 1, 3, 1, 3…. 를 곱한 것을 모두 더하고, 
     그 값을 10으로 나눈 나머지가 0이 되도록 만드는 숫자 m을 사용한다. 수학적으로는 다음과 같다.
@@ -35,5 +35,24 @@ int main() {
     string str;
     cin >> str;
 
+    int answer = 1, index = 0, sum = 0;
 
+    for (int i = 0; i < str.length(); i++) {
+        if (str[i] != '*') {
+            if (i % 2 == 0) sum += str[i] - '0';
+            else sum += (str[i] - '0') * 3;
+        }
+        else index = i;
+    }
+
+    for (int i = 1; i < 10; i++) {
+        if ((sum + i) % 10 == 0) {
+            answer = i;
+            break;
+        }
+    }
+
+    if (index % 2 != 0) answer /= 3;
+
+    cout << answer;
 }
