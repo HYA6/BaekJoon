@@ -35,24 +35,26 @@ int main() {
     string str;
     cin >> str;
 
-    int answer = 1, index = 0, sum = 0;
+    int answer = 0, index = 0, check, sum = 0;
 
     for (int i = 0; i < str.length(); i++) {
         if (str[i] != '*') {
-            if (i % 2 == 0) sum += str[i] - '0';
-            else sum += (str[i] - '0') * 3;
+            if (i % 2 == 0)
+                sum += str[i] - '0';
+            else
+                sum += (str[i] - '0') * 3;
         }
         else index = i;
     }
 
-    for (int i = 1; i < 10; i++) {
-        if ((sum + i) % 10 == 0) {
+    int v = (index % 2 != 0) ? 3 : 1;
+
+    for (int i = 0; i < 10; i++) {
+        if ((i * v + sum) % 10 == 0) {
             answer = i;
             break;
         }
     }
-
-    if (index % 2 != 0) answer /= 3;
 
     cout << answer;
 }
